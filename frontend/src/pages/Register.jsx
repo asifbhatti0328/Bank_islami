@@ -1,8 +1,7 @@
-import React, { useContext} from 'react'
-import { useState,useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import { NavLink } from 'react-router-dom';
 import axios from 'axios'
 import { ShopContext } from '../context/shopContext'
-import { NavLink } from 'react-router-dom'
 
 
 const Register = () => {
