@@ -1,7 +1,7 @@
 import React, { useContext} from 'react'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
-import { ShopContext } from '../context/ShopContext'
+import { ShopContext } from '../context/shopContext'
 import { NavLink } from 'react-router-dom'
 
 
