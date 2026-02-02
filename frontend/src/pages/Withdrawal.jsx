@@ -1,0 +1,64 @@
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+
+const Withdrawal = () => {
+
+  let [withdrawalInput, setwithdrawalInput] = useState("");
+
+  let withdrawalInputChnage = (event)=> {
+   setwithdrawalInput(event.target.value);
+  }
+ 
+
+  return (
+    <div className='mt-[4rem]'>
+      <div className='flex h-[2rem] pl-2 w-[60%] items-center justify-between'>
+        <NavLink to={'/'}>
+           <i class="fa fa-chevron-left mr-[4rem] ml-[1rem] font-bold text-blue-900" aria-hidden="true">--</i>
+        </NavLink>
+
+        <h1 className='text-1xl font-bold text-blue-900'>Withdraw</h1>
+      </div>
+
+      <div className='p-3 pt-4'>
+        <h1 className=' text-2xl font-bold text-center'>Available Balance </h1>
+        <h1 className=' text-[1.2rem] font-bold text-center text-blue-900'>PKR 50000 </h1>
+        <h1 className=' text-3xl pt-3 font-bold text-center text-blue-900'>PKR {withdrawalInput} </h1>
+
+          <h1 className=' font-1xl py-2 font-bold text-center'>Enter Amount</h1>
+
+         <div className='flex items-center justify-center'>
+         <input value={withdrawalInput} onChange={withdrawalInputChnage} className='w-[50%] px-5 py-5 border rounded' type="Number"/>
+         </div>
+
+         <div className='flex items-center justify-between mt-10'>
+          <h1 className='font-bold'>Withdraw Money To</h1>
+          <p className='bg-red-400 text-white font-bold text-sm  p-2 rounded'>Please bind Account</p>
+         </div>
+
+
+          <div className='flex items-center justify-around box py-1 mt-6 rounded'>
+            <i class="fa-solid fa-building-columns navbar-icon"></i>
+            <div className='font-bold'>
+              <h1>JazzCash</h1>
+              <h1>Muhammad Asif</h1>
+              <h1>03286696596</h1>
+            </div>
+            <i class="fa-solid fa-pencil navbar-icon text-blue-900"></i>
+          </div>
+        
+          <p className='pt-3 text-red-500'><b>Note: </b> According to the policy, Service charges will be applicable on every Withdrawal.
+          </p>
+
+
+
+        <div className='py-10 mb-10'>
+          <button className='w-[100%] py-4 text-1xl font-bold text-white bg-blue-900 border-none rounded'>Continue Withdraw</button>
+        </div>
+
+      </div>
+    </div>
+  )
+}
+
+export default Withdrawal

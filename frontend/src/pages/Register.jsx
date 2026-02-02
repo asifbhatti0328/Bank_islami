@@ -1,0 +1,70 @@
+import React, { useContext} from 'react'
+import { useState,useEffect } from 'react'
+import axios from 'axios'
+import { ShopContext } from '../context/ShopContext'
+import { NavLink } from 'react-router-dom'
+
+
+const Register = () => {
+
+  const { token, setToken, navigate, backend_Url } = useContext(ShopContext);
+  const [fullName, setfullName] = useState('');
+  const [userName, setuserName] = useState('');
+  const [email, setemail] = useState('');
+  const [phone, setphone] = useState('');
+  const [password, setpassword] = useState('');
+
+    useEffect(() => {
+      if (token) {
+        navigate('/')
+      }
+    }, [navigate, token])
+  
+  
+
+
+  const onSubmitHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+         const response = await axios.post(backend_Url + '/user/register', {fullName,userName,email,phone,password});
+      if(response.data.success) {
+        setToken(response.data.token);
+        localStorage.setItem('token', response.data.token);
+      }else{
+       console.log(response.data.message);
+      }
+
+    } catch (error) {
+      console.log(error.message)
+    }
+  };
+
+
+  return (
+    <div className='py-[70px]'>
+      <form onSubmit={onSubmitHandler} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-3 gap-4 text-gray-800' action="">
+        <div className='inline-flex items-center gap-2 mb-2 mt-10'>
+          <p className='prata-regular text-blue-900 text-3xl'>Register</p>
+          <hr className='border-none h-[1.5px] w-8 bg-blue-900' />
+        </div>
+        <input onChange={(e) => setfullName(e.target.value)} value={fullName} className='w-full px-3 py-2 border border-gray-800' placeholder='Full Name' type="text" required />
+        <input onChange={(e) => setuserName(e.target.value)} value={userName} className='w-full px-3 py-2 border border-gray-800' placeholder='User Name' type="text" required />
+        <input onChange={(e) => setemail(e.target.value)} value={email} className='w-full px-3 py-2 border border-gray-800' placeholder='Email' type="email" required />
+        <input onChange={(e) => setphone(e.target.value)} value={phone} className='w-full px-3 py-2 border border-gray-800' placeholder='Phone' type="number" required />
+        <input onChange={(e) => setpassword(e.target.value)} value={password} className='w-full px-3 py-2 border border-gray-800' placeholder='Password' type="password" required />
+        <div className='w-full flex justify-between text-sm mt-[-8px]'>
+          <NavLink to={'/user/login'}>
+            <p className="cursor-pointer">Login Here</p>
+          </NavLink>
+        </div>
+
+        <button className='box-availableBalance  font-light text-white w-full px-8 py-2 mt-4 '>Register</button>
+
+      </form>
+
+    </div>
+  )
+}
+
+export default Register
