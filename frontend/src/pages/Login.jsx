@@ -2,8 +2,12 @@ import { NavLink } from 'react-router-dom'
 import React, { useContext, useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+<<<<<<< HEAD
 import { ShopContext } from '../context/ShopContext'
 import TextField from '@mui/material/TextField';
+=======
+import { ShopContext } from '../context/shopContext'
+>>>>>>> 1ef9e03dc549420b3eda2e614528f2d4b9ef417a
 
 
 
