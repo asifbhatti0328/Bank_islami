@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import axios from 'axios'
-import { ShopContext } from '../context/ShopContext'
+import { ShopContext } from '../context/shopContext'
 import TextField from '@mui/material/TextField';
 
 const Register = () => {
