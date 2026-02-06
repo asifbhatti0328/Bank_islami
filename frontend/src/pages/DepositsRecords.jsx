@@ -12,7 +12,7 @@ const DepositsRecords = () => {
 
       </div>
 
-                  <div className='bg-blue-800 border border-[1px solied black] w-full h-[200px] rounded p-2 mb-8'>
+                  <div className='bg-blue-800 border border-[1px solied black] w-full h-[200px] rounded p-2'>
 
       </div>
 
