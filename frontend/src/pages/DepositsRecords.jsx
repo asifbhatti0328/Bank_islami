@@ -17,7 +17,7 @@ const DepositsRecords = () => {
       </div>
 
       </div>
-            <div className='text-center'>
+            <div className='text-center pt-2'>
         {show ?         
         <h1  className='text-1xl font-bold'>No More data.</h1>:
         <h1 className='text-1xl font-bold'>Data Not found.</h1>
