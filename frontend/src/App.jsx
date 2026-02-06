@@ -16,6 +16,7 @@ import Footer from './components/Footer'
 import Progress from './pages/Progress'
 import Invest from './pages/Invest'
 import Menu from './pages/Menu'
+import DepositsRecords from './pages/DepositsRecords'
 
 const App = () => {
 
@@ -74,6 +75,14 @@ const App = () => {
               <Menu />
             </PrivateRoute>
           } />
+
+          <Route path='/deposits-records'
+          element={
+            <PrivateRoute>
+              <DepositsRecords />
+            </PrivateRoute>
+          } />
+
       </Routes>
       <Footer />
     </div>

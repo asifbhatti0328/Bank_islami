@@ -39,7 +39,6 @@ const Home = () => {
 
  
 
-  let availableBalance = 700000;
   const [show, setshow] = useState(false);
 
 

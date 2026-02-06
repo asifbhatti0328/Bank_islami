@@ -6,7 +6,7 @@ const Profile = () => {
  
     function copyUsername() {
     let text= document.getElementById("copyUsername").innerText;
-    let remove1= document.getElementById("remove5");
+    let remove5= document.getElementById("remove5");
     remove5.classList.remove('hidden');
     setTimeout(() => {
       remove5.classList.add('hidden') 
