@@ -14,7 +14,7 @@ const Withdrawal = () => {
     <div className='mt-[4rem]'>
       <div className='flex h-[2rem] pl-2 w-[60%] items-center justify-between'>
         <NavLink to={'/'}>
-           <i class="fa fa-chevron-left mr-[4rem] ml-[1rem] font-bold text-blue-900" aria-hidden="true">--</i>
+           <i class="fa fa-chevron-left mr-[4rem] ml-[1rem] font-bold text-blue-900" aria-hidden="true"></i>
         </NavLink>
 
         <h1 className='text-1xl font-bold text-blue-900'>Withdraw</h1>
