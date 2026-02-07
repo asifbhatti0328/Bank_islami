@@ -24,7 +24,7 @@ const DepositsRecords = () => {
           <div className='flex flex-col justify-evenly p-4'>
 
             <div className='flex items-center justify-between'>
-              <p className='font-bold'>Deposit Amount</p>
+              <p className=''>Deposit Amount</p>
               <p className='font-bold text-yellow-500'>2500</p>
             </div>
             <div className='flex items-center justify-between'>
