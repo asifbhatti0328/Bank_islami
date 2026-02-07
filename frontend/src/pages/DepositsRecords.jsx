@@ -25,28 +25,28 @@ const DepositsRecords = () => {
 
             <div className='flex items-center justify-between'>
               <p className='font-bold'>Deposit Amount</p>
-              <p className='font-bold text-yellow-300'>2500</p>
+              <p className='font-bold text-yellow-500'>2500</p>
             </div>
             <div className='flex items-center justify-between'>
               <p className='font-bold'>Bank Name</p>
-              <p className='font-bold text-yellow-300'>JazzCash</p>
+              <p className='font-bold text-yellow-500'>JazzCash</p>
             </div>
             <div className='flex items-center justify-between'>
               <p className='font-bold'>Accout Holder</p>
-              <p className='font-bold text-yellow-300'>Muhammad Asif</p>
+              <p className='font-bold text-yellow-500'>Muhammad Asif</p>
             </div>
             <div className='flex items-center justify-between'>
               <p className='font-bold'>Account Number</p>
-              <p className='font-bold text-yellow-300'>03286696596</p>
+              <p className='font-bold text-yellow-500'>03286696596</p>
             </div>
             <div className='flex items-center justify-between'>
               <p className='font-bold'>Date</p>
-              <p className='font-bold text-yellow-300'>07 Feb 2026 10:59 AM</p>
+              <p className='font-bold text-yellow-500'>07 Feb 2026 10:59 AM</p>
             </div>
 
             <div className='flex items-center justify-between'>
               <p className='font-bold'>Status</p>
-              <p className='font-bold text-yellow-300'>Pending</p>
+              <p className='font-bold text-yellow-500'>Pending</p>
             </div>
 
           </div>
@@ -54,104 +54,6 @@ const DepositsRecords = () => {
         </div>
 
 
-        <div className='bg-white border border-[1px solied black] w-full h-[200px] rounded p-1 mb-8'>
-          <div className='flex flex-col justify-evenly p-4'>
-
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Deposit Amount</p>
-              <p className='font-bold text-yellow-300'>2500</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Bank Name</p>
-              <p className='font-bold text-yellow-300'>JazzCash</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Accout Holder</p>
-              <p className='font-bold text-yellow-300'>Muhammad Asif</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Account Number</p>
-              <p className='font-bold text-yellow-300'>03286696596</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Date</p>
-              <p className='font-bold text-yellow-300'>07 Feb 2026 10:59 AM</p>
-            </div>
-
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Status</p>
-              <p className='font-bold text-yellow-300'>Pending</p>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className='bg-white border border-[1px solied black] w-full h-[200px] rounded p-1 mb-8'>
-          <div className='flex flex-col justify-evenly p-4'>
-
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Deposit Amount</p>
-              <p className='font-bold text-yellow-300'>2500</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Bank Name</p>
-              <p className='font-bold text-yellow-300'>JazzCash</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Accout Holder</p>
-              <p className='font-bold text-yellow-300'>Muhammad Asif</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Account Number</p>
-              <p className='font-bold text-yellow-300'>03286696596</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Date</p>
-              <p className='font-bold text-yellow-300'>07 Feb 2026 10:59 AM</p>
-            </div>
-
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Status</p>
-              <p className='font-bold text-yellow-300'>Pending</p>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className='bg-white border border-[1px solied black] w-full h-[200px] rounded p-1 mb-8'>
-          <div className='flex flex-col justify-evenly p-4'>
-
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Deposit Amount</p>
-              <p className='font-bold text-yellow-300'>2500</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Bank Name</p>
-              <p className='font-bold text-yellow-300'>JazzCash</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Accout Holder</p>
-              <p className='font-bold text-yellow-300'>Muhammad Asif</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Account Number</p>
-              <p className='font-bold text-yellow-300'>03286696596</p>
-            </div>
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Date</p>
-              <p className='font-bold text-yellow-300'>07 Feb 2026 10:59 AM</p>
-            </div>
-
-            <div className='flex items-center justify-between'>
-              <p className='font-bold'>Status</p>
-              <p className='font-bold text-yellow-300'>Pending</p>
-            </div>
-
-          </div>
-
-        </div>
 
 
 
