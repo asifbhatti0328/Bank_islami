@@ -7,7 +7,7 @@ const DepositsRecords = () => {
   return (
     <div className='py-[70px]'>
 
-      <div className='flex h-[2rem] pl-2 mb-5 w-[80%] items-center justify-between'>
+      <div className='flex h-[2rem] pl-2 mb-5 w-[70%] items-center justify-between'>
         <NavLink to={'/'}>
           <i class="fa fa-chevron-left mr-[4rem] ml-[1rem] font-bold text-black" aria-hidden="true"></i>
         </NavLink>
@@ -20,11 +20,11 @@ const DepositsRecords = () => {
 
 
 
-        <div className='bg-white border border-[1px solied black] w-full h-[200px] rounded p-1 mb-8'>
-          <div className='flex flex-col justify-evenly p-4'>
+        <div className='bg-white flex flex-col justify-between border border-[1px solied black] w-full h-[200px] rounded p-3'>
+          
 
             <div className='flex items-center justify-between'>
-              <p className=''>Deposit Amount</p>
+              <p className='font-bold'>Deposit Amount</p>
               <p className='font-bold text-yellow-500'>2500</p>
             </div>
             <div className='flex items-center justify-between'>
@@ -49,7 +49,7 @@ const DepositsRecords = () => {
               <p className='font-bold text-yellow-500'>Pending</p>
             </div>
 
-          </div>
+        
 
         </div>
 
