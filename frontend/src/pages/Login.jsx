@@ -48,7 +48,7 @@ const Login = () => {
         <div className='inline-flex items-center gap-2 mb-2 mt-10'>
           <p className='prata-regular text-black text-3xl font-bold'>Login</p>
         </div>
-        <img className='h-[150px] w-[150px] rounded-full' src={assets.bankIslami_logo} alt="" />
+        <img className='h-[150px] w-[150px] rounded-full' src={assets.logo_login} alt="" />
         <div className='flex items-center justify-end w-full'>
           <h3 className='text-1xl font-bold px-2'>فون نمبر درج کریں</h3>
         </div>

@@ -79,7 +79,7 @@ import contact_img from './contact_img.png'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
-import bankIslami_logo from './bank_islami_logo.jpeg'
+import logo_login from './logo_login.jpeg'
 
 export const assets = {
     bank_isclamic,
@@ -106,7 +106,7 @@ export const assets = {
     back_view,
     bike,
     profile_img,
-    bankIslami_logo
+    logo_login
 }
 
 export const products = [
