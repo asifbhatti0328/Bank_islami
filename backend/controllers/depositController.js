@@ -5,15 +5,15 @@ import userModel from '../models/userModel.js'
 //Route for user deposit
 const depositUser = async (req, res) => {
     try {
-        const { depositMethod, depositAmount } = req.body;
-        const transactionId = Math.floor(Math.random() * 5000000000) + 1;
-        const userId = await userModel.findById('69343d6afc346164000b9e86');
+        const { depositMethod, depositAmount,accountHolderName,accountNumber } = req.body;
+        const userId = await userModel.findById('6983847bbdab67776d1d30ec');
 
         const newDeposit = new depositModel({
             depositMethod,
+            accountHolderName,
+            accountNumber,
             depositAmount,
             userId: userId._id,
-            transactionId: transactionId
         })
 
         const deposit = await newDeposit.save();
