@@ -43,7 +43,7 @@ const Login = () => {
 
 
   return (
-    <div className='py-[70px]'>
+    <div className='py-[0px] pb-[70px]'>
       <form onSubmit={onSubmitHandler} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800' action="">
         <div className='inline-flex items-center gap-2 mb-2 mt-10'>
           <p className='prata-regular text-black text-3xl font-bold'>Login</p>
