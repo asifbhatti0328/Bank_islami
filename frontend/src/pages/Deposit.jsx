@@ -6,6 +6,10 @@ import axios from 'axios'
 
 const Deposit = () => {
   const { token, setToken,navigate, backend_Url, } = useContext(ShopContext);
+        const savedUserData= localStorage.getItem('userData');
+      const userdata= (JSON.parse(savedUserData));
+      const userId= userdata._id;
+
 
   const [accountHolderName, setaccountHolderName] = useState('');
   const [accountNumber, setaccountNumber] = useState('');
@@ -18,7 +22,8 @@ const Deposit = () => {
 
     try {
       if (token) {
-        const response = await axios.post(backend_Url + '/deposit', { accountHolderName, accountNumber, depositAmount, depositMethod });
+        const response = await axios.post(backend_Url + '/deposit', { userId,accountHolderName, accountNumber, depositAmount, depositMethod });
+        console.log(response.data);
         if (response.data.success) {
           setToken(response.data.token);
           localStorage.setItem('token', response.data.token);

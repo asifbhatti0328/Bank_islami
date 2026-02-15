@@ -28,12 +28,8 @@ const Home = () => {
 
   useEffect(() => {
     loaduserData();
- }, [token]) 
+ }, []) 
 
-
- useEffect(() => {
-  console.log(userData)
- }, [userData])
 
 
 

@@ -8,7 +8,7 @@
     "start": "node server.js",
     "server": "nodemon server.js"
   },
-  "author": "Asif Bhatti",
+  "author": "Asif Bhatti Mern Stack Developer",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",

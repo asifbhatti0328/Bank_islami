@@ -4,7 +4,7 @@ import 'dotenv/config'
 import connectDb from './config/mongoose.js'
 import userRouter from './routes/userRoute.js'
 import findUserRouter from './routes/findUserRoute.js';
-import depositRouter from './routes/depositRoute.js'
+import {findDepositsRouter,depositRouter} from './routes/depositRoute.js'
 import {withdrawalRouter} from './routes/withdrawalRoute.js';
 import {bindAccountRouter,findAccountRouter} from './routes/bindAccount.js'
 
@@ -33,6 +33,8 @@ app.use('/',findUserRouter);
 app.use('/',withdrawalRouter);
 app.use('/',bindAccountRouter);
 app.use('/',findAccountRouter);
+app.use('/',findDepositsRouter);
+
 
 
 

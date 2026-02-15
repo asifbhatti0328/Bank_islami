@@ -1,9 +1,38 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState, useContext, useEffect } from 'react'
+import { NavLink } from 'react-router-dom';
+import axios from 'axios'
+import { ShopContext } from '../context/shopContext'
 
 
 const DepositsRecords = () => {
-  const [show, setshow] = useState(true)
+  const { token, backend_Url, } = useContext(ShopContext);
+  const [deposit, setdeposits]= useState([]);
+
+
+  const savedUserData = localStorage.getItem('userData');
+  const userdata = (JSON.parse(savedUserData));
+  const userId = userdata._id;
+
+
+  const loadDeposits = async () => {
+    try {
+      const response = await axios.post(backend_Url + '/deposits-records', { userId });
+      const deposits= response.data.depositsData;
+      setdeposits(deposits);
+      // for (const deposit of deposits) {
+      //   console.log(deposit);
+      // }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+    useEffect(() => {
+    loadDeposits();
+  }, [token])
+
+
   return (
     <div className='py-[70px]'>
 
@@ -16,142 +45,55 @@ const DepositsRecords = () => {
       </div>
 
 
-      <div className='bg-black/5 p-2 rounded'>
-
-
-
-        <div className='bg-white flex flex-col justify-between border border-[1px solied black] w-full h-[250px] rounded p-3 mb-8'>
+      <div className='bg-black/5 p-2 rounded text-center'>
+    {
+      deposit.length && 
+      <div>
+        {
+          deposit.map((item, index)=> (
+            
+        <div key={index} className='bg-white flex flex-col justify-between border border-[1px solid black] w-full h-[250px] rounded p-3 mb-8'>
 
 
           <div className='flex items-center justify-between'>
             <p className='font-bold'>Deposit Amount</p>
-            <p className='font-bold text-yellow-500'>2500</p>
+            <p className='font-bold text-yellow-500'>{item.depositAmount}</p>
           </div>
           <div className='flex items-center justify-between'>
             <p className='font-bold'>Bank Name</p>
-            <p className='font-bold text-yellow-500'>JazzCash</p>
+            <p className='font-bold text-yellow-500'>{item.depositMethod}</p>
           </div>
           <div className='flex items-center justify-between'>
             <p className='font-bold'>Accout Holder</p>
-            <p className='font-bold text-yellow-500'>Muhammad Asif</p>
+            <p className='font-bold text-yellow-500'>{item.accountHolderName}</p>
           </div>
           <div className='flex items-center justify-between'>
             <p className='font-bold'>Account Number</p>
-            <p className='font-bold text-yellow-500'>03286696596</p>
+            <p className='font-bold text-yellow-500'>{item.accountNumber}</p>
           </div>
           <div className='flex items-center justify-between'>
             <p className='font-bold'>Date</p>
-            <p className='font-bold text-yellow-500'>07 Feb 2026 10:59 AM</p>
+            <p className='font-bold text-yellow-500'>{item.createdAt}</p>
           </div>
 
           <div className='flex items-center justify-between'>
             <p className='font-bold'>Status</p>
-            <p className='font-bold text-yellow-500'>Pending</p>
+            <p className='font-bold text-yellow-500'>{item.depositStatus}</p>
           </div>
 
 
 
         </div>
-
-        <div className='bg-white flex flex-col justify-between border border-[1px solied black] w-full h-[250px] rounded p-3 mb-8'>
-
-
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Deposit Amount</p>
-            <p className='font-bold text-yellow-500'>5000</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Bank Name</p>
-            <p className='font-bold text-yellow-500'>EasyPaisa</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Accout Holder</p>
-            <p className='font-bold text-yellow-500'>Hanam Rajpoot</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Account Number</p>
-            <p className='font-bold text-yellow-500'>03107827348</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Date</p>
-            <p className='font-bold text-yellow-500'>07 Feb 2026 10:59 AM</p>
-          </div>
-
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Status</p>
-            <p className='font-bold text-yellow-500'>Pending</p>
-          </div>
+                  ))
+        }
 
 
+      </div>
+    }
 
-        </div>
-
-        <div className='bg-white flex flex-col justify-between border border-[1px solied black] w-full h-[250px] rounded p-3 mb-8'>
-
-
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Deposit Amount</p>
-            <p className='font-bold text-yellow-500'>2500</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Bank Name</p>
-            <p className='font-bold text-yellow-500'>JazzCash</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Accout Holder</p>
-            <p className='font-bold text-yellow-500'>Muhammad Asif</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Account Number</p>
-            <p className='font-bold text-yellow-500'>03286696596</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Date</p>
-            <p className='font-bold text-yellow-500'>07 Feb 2026 10:59 AM</p>
-          </div>
-
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Status</p>
-            <p className='font-bold text-yellow-500'>Pending</p>
-          </div>
-
-
-
-        </div>
-
-        <div className='bg-white flex flex-col justify-between border border-[1px solied black] w-full h-[250px] rounded p-3 mb-8'>
-
-
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Deposit Amount</p>
-            <p className='font-bold text-yellow-500'>2500</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Bank Name</p>
-            <p className='font-bold text-yellow-500'>JazzCash</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Accout Holder</p>
-            <p className='font-bold text-yellow-500'>Muhammad Asif</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Account Number</p>
-            <p className='font-bold text-yellow-500'>03286696596</p>
-          </div>
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Date</p>
-            <p className='font-bold text-yellow-500'>07 Feb 2026 10:59 AM</p>
-          </div>
-
-          <div className='flex items-center justify-between'>
-            <p className='font-bold'>Status</p>
-            <p className='font-bold text-yellow-500'>Pending</p>
-          </div>
-
-        </div>
       </div>
       <div className='text-center pt-2'>
-        {show ?
+        {deposit.length ?
           <h1 className='text-1xl font-bold'>NO more data.</h1> :
           <h1 className='text-1xl font-bold'>Data Not found.</h1>
         }

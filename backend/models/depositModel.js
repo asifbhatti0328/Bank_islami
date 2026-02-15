@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const depositSchema = new mongoose.Schema({
-    userId: {type:mongoose.Schema.Types.ObjectId,ref:'user',required:true },
+    userId: {type:String,required:true },
     depositMethod: {type:String,required:true},
     accountHolderName: {type:String,required:true},
     accountNumber: {type:String,required:true},
