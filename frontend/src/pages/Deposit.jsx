@@ -9,6 +9,7 @@ const Deposit = () => {
         const savedUserData= localStorage.getItem('userData');
       const userdata= (JSON.parse(savedUserData));
       const userId= userdata._id;
+      const [userToken, setUserToken] = useState([]);
 
 
   const [accountHolderName, setaccountHolderName] = useState('');
@@ -19,14 +20,12 @@ const Deposit = () => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
-
+    setUserToken(token);
     try {
-      if (token) {
+      if (userToken) {
         const response = await axios.post(backend_Url + '/deposit', { userId,accountHolderName, accountNumber, depositAmount, depositMethod });
         console.log(response.data);
         if (response.data.success) {
-          setToken(response.data.token);
-          localStorage.setItem('token', response.data.token);
               navigate('/deposits-records')
         } else {
           console.log(response.data.message);
@@ -38,6 +37,9 @@ const Deposit = () => {
     }
 
   }
+
+
+  
 
   function copyBankName() {
     let text = document.getElementById("copyBankName").innerText;
