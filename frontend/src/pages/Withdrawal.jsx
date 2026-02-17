@@ -6,7 +6,9 @@ const Withdrawal = () => {
   let [withdrawalInput, setwithdrawalInput] = useState("");
 
   let withdrawalInputChnage = (event)=> {
-   setwithdrawalInput(event.target.value);
+    if(event.target.value.length <=8) {
+         setwithdrawalInput(event.target.value);
+    }
   }
  
 
@@ -14,26 +16,26 @@ const Withdrawal = () => {
     <div className='mt-[4rem]'>
       <div className='flex h-[2rem] pl-2 w-[60%] items-center justify-between'>
         <NavLink to={'/'}>
-           <i class="fa fa-chevron-left mr-[4rem] ml-[1rem] font-bold text-blue-900" aria-hidden="true"></i>
+           <i class="fa fa-chevron-left mr-[4rem] ml-[1rem] font-bold text-black" aria-hidden="true"></i>
         </NavLink>
 
-        <h1 className='text-1xl font-bold text-blue-900'>Withdraw</h1>
+        <h1 className='text-1xl font-bold text-black'>Withdraw</h1>
       </div>
-
-      <div className='p-3 pt-4'>
+      <form action="">
+              <div className='p-3 pt-4'>
         <h1 className=' text-2xl font-bold text-center'>Available Balance </h1>
-        <h1 className=' text-[1.2rem] font-bold text-center text-blue-900'>PKR 50000 </h1>
-        <h1 className=' text-3xl pt-3 font-bold text-center text-blue-900'>PKR {withdrawalInput} </h1>
+        <h1 className=' text-[1.2rem] font-bold text-center text-yellow-500'>PKR 50000 </h1>
+        <h1 className=' text-3xl pt-3 font-bold text-center text-yellow-500'>PKR {withdrawalInput} </h1>
 
           <h1 className=' font-1xl py-2 font-bold text-center'>Enter Amount</h1>
 
          <div className='flex items-center justify-center'>
-         <input value={withdrawalInput} onChange={withdrawalInputChnage} className='w-[50%] px-5 py-5 border rounded' type="Number"/>
+         <input required min={1} max={500000} value={withdrawalInput} onChange={withdrawalInputChnage} className='w-[50%] px-5 py-5 border rounded' type="Number"/>
          </div>
 
          <div className='flex items-center justify-between mt-10'>
           <h1 className='font-bold'>Withdraw Money To</h1>
-          <p className='bg-red-400 text-white font-bold text-sm  p-2 rounded'>Please bind Account</p>
+          <p className='bg-black/50 text-white font-bold text-sm  p-2 rounded'>Please bind Account</p>
          </div>
 
 
@@ -57,6 +59,8 @@ const Withdrawal = () => {
         </div>
 
       </div>
+
+      </form>
     </div>
   )
 }
