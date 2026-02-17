@@ -9,7 +9,7 @@ const Invest = () => {
             <div className='p-2 mx-2 my-4 rounded  plans bg-slate-0 shadow-lg'>
               <div className='flex justify-around items-center'>
                 <img className='h-[150px] w-[200px] rounded' src={assets.bike} alt="" />
-                <h2 className='text-blue-800 font-bold'>8% / Per Day</h2>
+                <h2 className='text-yellow-500 font-bold'>8% / Per Day</h2>
               </div>
 
 
@@ -27,7 +27,7 @@ const Invest = () => {
               <div>
                 <div className='px-2'>
                 <hr />
-                  <h2 className='text-blue-800 text-[15px] font-bold pr-5'>You can invest in 1 day offer between 5pm-6pm daily.</h2>
+                  <h2 className='text-yellow-500 text-[15px] font-bold pr-5'>You can invest in 1 day offer between 5pm-6pm daily.</h2>
                   <p className='text-blue-800 mt-1 text-[0.6rem] font-bold'>150k People invested</p>
                 </div>
               </div>
