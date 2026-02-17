@@ -182,7 +182,7 @@ const Deposit = () => {
           </div>
 
           <div className='py-10 mb-10'>
-            <button className='w-[100%] py-4 text-1xl font-bold text-white bg-blue-900 border-none rounded'>Deposit</button>
+            <button className='w-[100%] opacity-90 py-4 text-1xl font-bold text-white bg-blue-900 border-none rounded'>Deposit</button>
           </div>
 
 
