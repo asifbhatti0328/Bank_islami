@@ -18,7 +18,7 @@ const DepositsRecords = () => {
     try {
       const response = await axios.post(backend_Url + '/deposits-records', { userId });
       const deposits= response.data.depositsData;
-      setdeposits(deposits);
+      setdeposits(deposits.reverse());
       // for (const deposit of deposits) {
       //   console.log(deposit);
       // }
@@ -57,14 +57,14 @@ const DepositsRecords = () => {
 
           <div className='flex items-center justify-between'>
             <p className='font-bold'>Deposit Amount</p>
-            <p className='font-bold text-yellow-500'>{item.depositAmount}</p>
+            <p className='font-bold text-yellow-500'>{item.depositAmount.toLocaleString()}</p>
           </div>
           <div className='flex items-center justify-between'>
             <p className='font-bold'>Bank Name</p>
             <p className='font-bold text-yellow-500'>{item.depositMethod}</p>
           </div>
           <div className='flex items-center justify-between'>
-            <p className='font-bold'>Accout Holder</p>
+            <p className='font-bold'>Account Holder</p>
             <p className='font-bold text-yellow-500'>{item.accountHolderName}</p>
           </div>
           <div className='flex items-center justify-between'>
@@ -73,7 +73,7 @@ const DepositsRecords = () => {
           </div>
           <div className='flex items-center justify-between'>
             <p className='font-bold'>Date</p>
-            <p className='font-bold text-yellow-500'>{item.createdAt}</p>
+            <p className='font-bold text-yellow-500'>{new Date(item.createdAt).toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit',hour12: true }).replace(/\//g, '-')}</p>
           </div>
 
           <div className='flex items-center justify-between'>
@@ -94,7 +94,7 @@ const DepositsRecords = () => {
       </div>
       <div className='text-center pt-2'>
         {deposit.length ?
-          <h1 className='text-1xl font-bold'>NO more data.</h1> :
+          <h1 className='text-1xl font-bold'>No more</h1> :
           <h1 className='text-1xl font-bold'>Data Not found.</h1>
         }
       </div>
