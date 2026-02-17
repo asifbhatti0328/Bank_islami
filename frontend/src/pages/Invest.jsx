@@ -6,7 +6,7 @@ const Invest = () => {
     <div className='py-[70px]'>
             <h1 className=' text-[20px] font-bold text-center'>Investment Offers</h1>
 
-            <div className='p-2 mx-2 my-4 rounded bg-slate-0 shadow-lg'>
+            <div className='p-2 mx-2 my-4 rounded  plans bg-slate-0 shadow-lg'>
               <div className='flex justify-around items-center'>
                 <img className='h-[150px] w-[200px] rounded' src={assets.bike} alt="" />
                 <h2 className='text-blue-800 font-bold'>8% / Per Day</h2>
