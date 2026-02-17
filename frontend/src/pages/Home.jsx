@@ -49,7 +49,7 @@ const Home = () => {
 
   return (
     <div className='py-[70px]'>
-      <div className='h-[9rem] md:hidden w-[100%] bg-blue-900 opacity-80 box-availableBalance rounded'>
+      <div className='h-[9rem] md:hidden w-[100%] bg-blue-900 opacity-70 box-availableBalance rounded'>
         <div className='px-5 py-0 text-white'>
           <div className='flex items-center justify-between'>
 
