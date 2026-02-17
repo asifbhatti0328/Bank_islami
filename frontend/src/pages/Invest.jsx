@@ -3,10 +3,10 @@ import {assets} from '../assets/assets'
 
 const Invest = () => {
   return (
-    <div className='py-[70px]'>
+    <div className='py-[70px] bg-black/5'>
             <h1 className=' text-[20px] font-bold text-center'>Investment Offers</h1>
 
-            <div className='p-2 mx-2 my-4 rounded plans bg-slate-0 shadow-lg'>
+            <div className='p-2 mx-2 my-4 rounded  bg-white '>
               <div className='flex justify-around items-center'>
                 <img className='h-[150px] w-[200px] rounded' src={assets.bike} alt="" />
                 <h2 className='text-blue-800 font-bold'>8% / Per Day</h2>
