@@ -1,10 +1,118 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { NavLink } from 'react-router-dom'
+import { ShopContext } from '../context/shopContext'
+import axios from 'axios'
+
 
 const BindAccount = () => {
+    const { token, setToken,navigate, backend_Url, } = useContext(ShopContext);
+          const savedUserData= localStorage.getItem('userData');
+        const userdata= (JSON.parse(savedUserData));
+        const userId= userdata._id;
+        const [userToken, setUserToken] = useState([]);
+  
   return (
-    <div className='min-h-[80vh] flex items-center justify-center'>
-      <h1>bind account</h1>
+        <div className='mt-[4rem]'>
+      <div className='flex h-[2rem] pl-2 w-[60%] items-center justify-between'>
+        <NavLink to={'/'}>
+          <i class="fa fa-chevron-left mr-[4rem] ml-[1rem] font-bold text-black-900" aria-hidden="true"></i>
+        </NavLink>
+
+        <h1 className='text-1xl font-bold text-black-900'>Bind Account</h1>
+      </div>
+
+      <div className='p-3'>
+        <h1 className=' text-2xl font-bold'>Account Details :</h1>
+
+        <div className='w-[100%] px-5 h-[4rem] mt-3 border rounded'>
+          <h1>Bank Name</h1>
+          <div className='flex items-center justify-between '>
+            <h1 id='copyBankName' className='font-bold text-1xl'>Meezan Bank</h1>
+          </div>
+        </div>
+
+
+        <div className='w-[100%] px-5 h-[4rem] mt-3 border rounded'>
+          <h1>Account Holder Name</h1>
+          <div className='flex items-center justify-between '>
+            <h1 id='copyAccountHolderName' className='font-bold text-1xl'>Muhammad Asif</h1>
+          </div>
+        </div>
+
+        <div className='w-[100%] px-5 h-[4rem] mt-3 border rounded'>
+          <h1>Account Number</h1>
+          <div className='flex items-center justify-between '>
+            <h1 id='copyAccountNumber' className='font-bold text-1xl'>00300108185581</h1>
+          </div>
+        </div>
+
+        <div id='remove1' className='md:hidden hidden h-[5rem] w-[94%] fixed top-[4rem] left-2.5'>
+          <div className='flex items-center justify-center bg-black py-2 text-white'>
+            <h1>Bank Name Copied</h1>
+          </div>
+
+        </div>
+
+
+        <div id='remove2' className='md:hidden hidden h-[5rem] w-[94%] fixed top-[4rem] left-2.5'>
+          <div className='flex items-center justify-center bg-black py-2 text-white'>
+            <h1>Account Holder Name Copied</h1>
+          </div>
+
+        </div>
+
+
+        <div id='remove3' className='md:hidden hidden h-[5rem] w-[94%] fixed top-[4rem] left-2.5'>
+          <div className='flex items-center justify-center bg-black py-2 text-white'>
+            <h1>Account Number Copied</h1>
+          </div>
+
+        </div>
+
+
+        <h1 className=' text-2xl font-bold py-2'>Update Account :</h1>
+
+
+
+        <form >
+          <div className='w-[100%]'>
+            <select required name="" id="" className='w-[100%] border rounded px-5 h-[4rem] mt-3'>
+              <option>Select Bank</option>
+              <option value="Meezan Bank">Meezan Bank Limited (MBL)</option>
+              <option value="United Bank">United Bank Limited (UBL)</option>
+              <option value="Mcb Bank">MCB Bank (MCB)</option>
+              <option value="Alflha Bank">Alflha Bank Limited (ABL)</option>
+              <option value="National Bank">National Bank Of Pakistan (NBP)</option>
+              <option value="Bank Of Punjab">Bank Of Punjab (BOP)</option>
+              <option value="Habib Bank">Habib Bank Limited (HBL)</option>
+              <option value="Easypaisa">Easypaisa</option>
+              <option value="JazzCash">JazzCash</option>
+              <option value="UPaisa">U Paisa</option>
+            </select>
+          </div>
+
+
+
+          <div className='my-3'>
+            <input required className='w-[100%] px-5 py-5 border rounded' type="text" placeholder='Account Holder Name' />
+          </div>
+
+          <div className='my-3'>
+            <input required  className='w-[100%] px-5 py-5 border rounded' type="number" placeholder='Account Number' />
+          </div>
+
+
+
+          <div className='py-10 mb-10'>
+            <button className='w-[100%] opacity-90 py-4 text-1xl font-bold text-white bg-blue-900 border-none rounded'>Update Account</button>
+          </div>
+
+
+        </form>
+
+      </div>
     </div>
+
   )
 }
 

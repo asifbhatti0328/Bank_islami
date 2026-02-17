@@ -28,7 +28,7 @@ const Invest = () => {
                 <div className='px-2'>
                 <hr />
                   <h2 className='text-yellow-500 text-[15px] font-bold pr-5'>You can invest in 1 day offer between 5pm-6pm daily.</h2>
-                  <p className='text-blue-800 mt-1 text-[0.6rem] font-bold'>150k People invested</p>
+                  <p className='text-black mt-1 text-[0.6rem] font-bold'>150k People invested</p>
                 </div>
               </div>
             </div>
