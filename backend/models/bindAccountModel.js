@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 
 const bindAccountSchema = new mongoose.Schema({
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user', required: true },
+    userId: {type: String, required: true },
     bindMethod: { type: String, required: true },
      bindAccountTitle: { type: String, required: true },
     bindAccountNo: { type: String, required: true },

@@ -5,7 +5,7 @@ import { ShopContext } from '../context/shopContext'
 import axios from 'axios'
 
 const Deposit = () => {
-  const { token, setToken,navigate, backend_Url, } = useContext(ShopContext);
+  const { token,navigate, backend_Url, } = useContext(ShopContext);
         const savedUserData= localStorage.getItem('userData');
       const userdata= (JSON.parse(savedUserData));
       const userId= userdata._id;
@@ -20,6 +20,10 @@ const Deposit = () => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
+    if (!accountHolderName || !accountNumber || !depositAmount || !depositMethod) {
+      alert('Please fill in all the fields.');
+      return;
+    }
     setUserToken(token);
     try {
       if (userToken) {

@@ -5,14 +5,45 @@ import axios from 'axios'
 
 
 const BindAccount = () => {
-    const { token, setToken,navigate, backend_Url, } = useContext(ShopContext);
-          const savedUserData= localStorage.getItem('userData');
-        const userdata= (JSON.parse(savedUserData));
-        const userId= userdata._id;
-        const [userToken, setUserToken] = useState([]);
-  
+  const { token, navigate, backend_Url, } = useContext(ShopContext);
+  const savedUserData = localStorage.getItem('userData');
+  const userdata = (JSON.parse(savedUserData));
+  const userId = userdata._id;
+  const [userToken, setUserToken] = useState([]);
+
+  const [bindMethod, setbindMethod] = useState('');
+  const [bindAccountTitle, setbindAccountTitle] = useState('');
+  const [bindAccountNo, setbindAccountNo] = useState('');
+
+
+
+  const submitInfo = async (e) => {
+    e.preventDefault();
+    if (!bindMethod || !bindAccountTitle || !bindAccountNo) {
+      alert('Please fill in all the fields.');
+      return;
+    }
+    setUserToken(token);
+
+    try {
+      if (userToken) {
+        const response = await axios.post(backend_Url + '/withdraw/bindAccount', { userId, bindMethod, bindAccountTitle, bindAccountNo });
+        console.log(response.data);
+        if (response.data.success) {
+          navigate('/withdrawal')
+        } else {
+          console.log(response.data.message);
+        }
+
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+
+  }
+
   return (
-        <div className='mt-[4rem]'>
+    <div className='mt-[4rem]'>
       <div className='flex h-[2rem] pl-2 w-[60%] items-center justify-between'>
         <NavLink to={'/'}>
           <i class="fa fa-chevron-left mr-[4rem] ml-[1rem] font-bold text-black-900" aria-hidden="true"></i>
@@ -74,9 +105,9 @@ const BindAccount = () => {
 
 
 
-        <form >
+        <form onSubmit={submitInfo}>
           <div className='w-[100%]'>
-            <select required name="" id="" className='w-[100%] border rounded px-5 h-[4rem] mt-3'>
+            <select required  onChange={(e) => setbindMethod(e.target.value)} name="" id="" className='w-[100%] border rounded px-5 h-[4rem] mt-3'>
               <option>Select Bank</option>
               <option value="Meezan Bank">Meezan Bank Limited (MBL)</option>
               <option value="United Bank">United Bank Limited (UBL)</option>
@@ -94,11 +125,11 @@ const BindAccount = () => {
 
 
           <div className='my-3'>
-            <input required className='w-[100%] px-5 py-5 border rounded' type="text" placeholder='Account Holder Name' />
+            <input onChange={(e) => setbindAccountTitle(e.target.value)} value={bindAccountTitle} required className='w-[100%] px-5 py-5 border rounded' type="text" placeholder='Account Holder Name' />
           </div>
 
           <div className='my-3'>
-            <input required  className='w-[100%] px-5 py-5 border rounded' type="number" placeholder='Account Number' />
+            <input onChange={(e) => setbindAccountNo(e.target.value)} value={bindAccountNo} required className='w-[100%] px-5 py-5 border rounded' type="number" placeholder='Account Number' />
           </div>
 
 
