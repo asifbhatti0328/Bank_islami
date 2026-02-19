@@ -8,9 +8,11 @@ const Withdrawal = () => {
   const [userData, setuserData] = useState(() => {
     const savedUserData = localStorage.getItem('userData');
     return savedUserData ? JSON.parse(savedUserData) : [];
-  })
-    ;
+  });
 
+  const [userToken, setUserToken] = useState([]);
+  const userId = userData._id;
+  const [bindAccountData, setBindAccountData] = useState([]);
 
 
   let [withdrawalInput, setwithdrawalInput] = useState("");
@@ -24,6 +26,8 @@ const Withdrawal = () => {
 
 
   const loaduserData = async () => {
+    setUserToken(token);
+
     try {
       if (!token) {
         return null
@@ -39,7 +43,30 @@ const Withdrawal = () => {
 
   useEffect(() => {
     loaduserData();
+  }, []);
+
+
+  useEffect(() => {
+    loadBindAccountInfo();
   }, [])
+
+
+
+  const loadBindAccountInfo = async () => {
+    try {
+      if (!userToken) {
+        return null
+      }
+      const response = await axios.post(backend_Url + '/withdraw/findAccount', { userId });
+      console.log(response.data.bindAccount);
+      setBindAccountData(response.data.bindAccount);
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
+
 
 
   return (
@@ -65,23 +92,26 @@ const Withdrawal = () => {
 
           <div className='flex items-center justify-between mt-10'>
             <h1 className='font-bold'>Withdraw Money To</h1>
-            <NavLink to={'/bind-account'}>
-              <p className='bg-black/50 cursor-pointer text-white font-bold text-sm  p-2 rounded'>Please bind Account</p>
-            </NavLink>
+            {!bindAccountData &&
+              <NavLink to={'/bind-account'}>
+                <p className='bg-black/50 cursor-pointer text-white font-bold text-sm  p-2 rounded'>Please bind Account</p>
+              </NavLink>
 
+            }
           </div>
 
 
-          <div className='flex items-center justify-around box py-1 mt-6 rounded'>
-            <i class="fa-solid fa-building-columns navbar-icon"></i>
-            <div className='font-bold'>
-              <h1>JazzCash</h1>
-              <h1>Muhammad Asif</h1>
-              <h1>03286696596</h1>
+          {bindAccountData &&
+            <div className='flex items-center justify-around box py-1 mt-6 rounded'>
+              <i class="fa-solid fa-building-columns navbar-icon"></i>
+              <div className='font-bold'>
+                <h1>{bindAccountData.bindMethod}</h1>
+                <h1>{bindAccountData.bindAccountTitle}</h1>
+                <h1>{bindAccountData.bindAccountNo}</h1>
+              </div>
+              <i class="fa-solid fa-pencil navbar-icon text-black cursor-pointer"></i>
             </div>
-            <i class="fa-solid fa-pencil navbar-icon text-black cursor-pointer"></i>
-          </div>
-
+          }
           <p className='pt-3 text-red-500'><b>Note: </b> According to the policy, Service charges will be applicable on every Withdrawal.
           </p>
 

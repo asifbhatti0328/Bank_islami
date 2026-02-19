@@ -53,55 +53,8 @@ const BindAccount = () => {
       </div>
 
       <div className='p-3'>
-        <h1 className=' text-2xl font-bold'>Account Details :</h1>
 
-        <div className='w-[100%] px-5 h-[4rem] mt-3 border rounded'>
-          <h1>Bank Name</h1>
-          <div className='flex items-center justify-between '>
-            <h1 id='copyBankName' className='font-bold text-1xl'>Meezan Bank</h1>
-          </div>
-        </div>
-
-
-        <div className='w-[100%] px-5 h-[4rem] mt-3 border rounded'>
-          <h1>Account Holder Name</h1>
-          <div className='flex items-center justify-between '>
-            <h1 id='copyAccountHolderName' className='font-bold text-1xl'>Muhammad Asif</h1>
-          </div>
-        </div>
-
-        <div className='w-[100%] px-5 h-[4rem] mt-3 border rounded'>
-          <h1>Account Number</h1>
-          <div className='flex items-center justify-between '>
-            <h1 id='copyAccountNumber' className='font-bold text-1xl'>00300108185581</h1>
-          </div>
-        </div>
-
-        <div id='remove1' className='md:hidden hidden h-[5rem] w-[94%] fixed top-[4rem] left-2.5'>
-          <div className='flex items-center justify-center bg-black py-2 text-white'>
-            <h1>Bank Name Copied</h1>
-          </div>
-
-        </div>
-
-
-        <div id='remove2' className='md:hidden hidden h-[5rem] w-[94%] fixed top-[4rem] left-2.5'>
-          <div className='flex items-center justify-center bg-black py-2 text-white'>
-            <h1>Account Holder Name Copied</h1>
-          </div>
-
-        </div>
-
-
-        <div id='remove3' className='md:hidden hidden h-[5rem] w-[94%] fixed top-[4rem] left-2.5'>
-          <div className='flex items-center justify-center bg-black py-2 text-white'>
-            <h1>Account Number Copied</h1>
-          </div>
-
-        </div>
-
-
-        <h1 className=' text-2xl font-bold py-2'>Update Account :</h1>
+        <h1 className=' text-2xl font-bold py-2'>Account Details :</h1>
 
 
 
@@ -135,7 +88,7 @@ const BindAccount = () => {
 
 
           <div className='py-10 mb-10'>
-            <button className='w-[100%] opacity-90 py-4 text-1xl font-bold text-white bg-blue-900 border-none rounded'>Update Account</button>
+            <button className='w-[100%] opacity-90 py-4 text-1xl font-bold text-white bg-blue-900 border-none rounded'>Bind Account</button>
           </div>
 
 

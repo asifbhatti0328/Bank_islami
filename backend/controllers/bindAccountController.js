@@ -31,8 +31,6 @@ const accountfind = async (req, res) => {
         const {userId} = req.body;
         const bindAccount= await bindAccountModel.findOne({userId: userId});
         res.json({ success: true,bindAccount});
-
-
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: error.message })
